@@ -10,6 +10,7 @@ function Projects() {
             techStack: ["Kotlin", "Android Studio"],
             imageEmoji: "📱",
             githubLink: "#",
+            numberColor: "rgba(220, 38, 38, 0.30)", // สีแดงเข้ม
             details: {
                 overview: "โปรเจกต์จบที่มุ่งเน้นการทลายกำแพงการสื่อสาร โดยการสร้างแอปพลิเคชันที่สามารถแปลภาษามือได้ผ่านกล้องมือถือ",
                 features: [
@@ -26,6 +27,7 @@ function Projects() {
             techStack: ["React", "JavaScript", "HTML/CSS"],
             imageEmoji: "🌐",
             githubLink: "#",
+            numberColor: "rgba(248, 113, 113, 0.30)", // สีแดงอ่อน
             details: {
                 overview: "เว็บไซต์สำหรับรวบรวมผลงานและประวัติการศึกษา เพื่อใช้ในการสมัครงานและนำเสนอทักษะทางด้าน Web Development",
                 features: [
@@ -56,9 +58,9 @@ function Projects() {
                         </div>
                         
                         <div style={styles.content}>
-                            <div style={styles.projectHeader}>
+                            <div style={{...styles.projectHeader}}>
                                 <h3 style={styles.projectTitle}>{project.title}</h3>
-                                <div style={styles.projectIndex}>0{index + 1}</div>
+                                <div style={{...styles.projectIndex, color: project.numberColor}}>0{index + 1}</div>
                             </div>
                             
                             <p style={styles.projectDesc}>{project.description}</p>
@@ -208,7 +210,6 @@ const styles = {
     projectIndex: {
         fontSize: '40px',
         fontWeight: '800',
-        color: 'rgba(220, 38, 38, 0.1)',
         lineHeight: '1',
         marginLeft: '15px',
     },
