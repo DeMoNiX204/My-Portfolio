@@ -74,7 +74,7 @@ function Contact() {
             <footer style={styles.footer}>
                 <div style={styles.footerContent}>
                     <div style={styles.footerLeft}>
-                        <div style={styles.footerLogo}>ฉัทชนันท์</div>
+                        <div style={styles.footerLogo}>Chatchanan</div>
                         <p style={styles.footerTagline}>Software & Mobile Developer</p>
                     </div>
                     <div style={styles.footerRight}>
