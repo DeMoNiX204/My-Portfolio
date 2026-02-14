@@ -5,7 +5,7 @@ function Skills() {
         {
             title: "Programming Languages",
             icon: "💻",
-            skills: ["Kotlin", "Python", "JavaScript", "HTML/CSS"],
+            skills: ["C","Java","Kotlin", "JavaScript", "HTML/CSS"],
             numberColor: "rgba(220, 38, 38, 0.30)" // 30% opacity - เห็นชัดที่สุด
         },
         {
