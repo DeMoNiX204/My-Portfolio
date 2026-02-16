@@ -1,4 +1,6 @@
 import React from 'react';
+import { IoIosBriefcase } from "react-icons/io";
+import { TbMailFilled } from "react-icons/tb";
 
 function Hero() {
     return (
@@ -27,13 +29,13 @@ function Hero() {
                         style={styles.primaryButton}
                         onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
                     >
-                        💼 ดูผลงานของฉัน
+                        <IoIosBriefcase size={20}/> ดูผลงานของฉัน
                     </button>
                     <button 
                         style={styles.secondaryButton}
                         onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                     >
-                        📧 ติดต่อฉัน
+                        <TbMailFilled size={20}/> ติดต่อฉัน
                     </button>
                 </div>
 

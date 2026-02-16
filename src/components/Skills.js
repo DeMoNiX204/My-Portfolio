@@ -1,22 +1,25 @@
 import React from 'react';
+import { FaComputer } from "react-icons/fa6";
+import { FaBook } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
 
 function Skills() {
     const skillCategories = [
         {
             title: "Programming Languages",
-            icon: "💻",
+            icon: <FaComputer size={30}/>,
             skills: ["C","Java","Kotlin", "JavaScript", "HTML/CSS"],
             numberColor: "rgba(220, 38, 38, 0.30)" // 30% opacity - เห็นชัดที่สุด
         },
         {
             title: "Libraries & Technologies",
-            icon: "⚡",
+            icon: <FaBook size={30}/>,
             skills: ["React", "Mobile App Development", "Image Processing"],
             numberColor: "rgba(220, 38, 38, 0.30)" // 30% opacity - เห็นชัดที่สุด
         },
         {
             title: "Tools & Environments",
-            icon: "🛠️",
+            icon: <FaTools size={30}/>,
             skills: ["Android Studio", "Google Colab", "Git", "GitHub"],
             numberColor: "rgba(220, 38, 38, 0.30)" // 30% opacity - เห็นชัดที่สุด
         }
@@ -39,7 +42,7 @@ function Skills() {
                     <div key={index} style={styles.card}>
                         <div style={styles.cardHeader}>
                             <div style={styles.iconBox}>
-                                <span style={styles.icon}>{category.icon}</span>
+                               {category.icon}
                             </div>
                             <div style={{...styles.cardNumber, color: category.numberColor}}>0{index + 1}</div>
                         </div>
@@ -139,9 +142,6 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgba(220, 38, 38, 0.1)',
-    },
-    icon: {
-        fontSize: '28px',
     },
     cardNumber: {
         fontSize: '48px',

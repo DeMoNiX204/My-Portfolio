@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-
+import { HiDocumentDownload } from "react-icons/hi";
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
@@ -76,7 +76,7 @@ function PDFViewer({ fileUrl, fileName, accentColor = '#DC2626' }) {
                     download={fileName}
                     style={{...styles.downloadButton, backgroundColor: accentColor}}
                 >
-                    Download ⬇️
+                    Download <HiDocumentDownload size={25}/>
                 </a>
             </div>
         </div>

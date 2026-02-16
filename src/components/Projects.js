@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { BiWorld } from "react-icons/bi";
+import { FaGithubSquare } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
 function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
 
@@ -8,7 +11,7 @@ function Projects() {
             title: "Sign Language Translation App",
             description: "แอปพลิเคชันบนมือถือสำหรับแปลภาษามือ พัฒนาระบบรับภาพผ่านกล้อง (Camera Activity) และประมวลผลวิดีโอเพื่อแปลความหมาย",
             techStack: ["Kotlin", "Android Studio"],
-            imageEmoji: "📱",
+            Icon: <IoPhonePortraitOutline size={100}/>,
             githubLink: "https://github.com/DeMoNiX204/Hand_Sign",
             numberColor: "rgba(220, 38, 38, 0.30)", // สีแดงเข้ม
             details: {
@@ -25,7 +28,7 @@ function Projects() {
             title: "Personal Portfolio Website",
             description: "เว็บไซต์ Portfolio ส่วนตัวเพื่อนำเสนอประวัติการศึกษา ทักษะ และผลงาน พัฒนาด้วย React และออกแบบ UI ให้รองรับการแสดงผลทุกหน้าจอ",
             techStack: ["React", "JavaScript", "HTML/CSS"],
-            imageEmoji: "🌐",
+            Icon: <BiWorld size={100}/>,
             githubLink: "https://github.com/DeMoNiX204/My-Portfolio",
             numberColor: "rgba(248, 113, 113, 0.30)", // สีแดงอ่อน
             details: {
@@ -54,7 +57,7 @@ function Projects() {
                 {projectList.map((project, index) => (
                     <div key={index} style={styles.card}>
                         <div style={styles.imageBox}>
-                            <span style={styles.imageEmoji}>{project.imageEmoji}</span>
+                            <span style={styles.Icon}>{project.Icon}</span>
                         </div>
                         
                         <div style={styles.content}>
@@ -80,13 +83,13 @@ function Projects() {
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    💻 GitHub
+                                    <FaGithubSquare size={25}/> GitHub
                                 </a>
                                 <button
                                     style={styles.detailsButton}
                                     onClick={() => setSelectedProject(project)}
                                 >
-                                    📖 รายละเอียด
+                                    <FaBook size={25}/> รายละเอียด
                                 </button>
                             </div>
                         </div>
@@ -103,7 +106,7 @@ function Projects() {
                         
                         <div style={styles.modalHeader}>
                             <div style={styles.modalIconBox}>
-                                <span style={styles.modalIcon}>{selectedProject.imageEmoji}</span>
+                                <span style={styles.modalIcon}>{selectedProject.Icon}</span>
                             </div>
                             <h2 style={styles.modalTitle}>{selectedProject.title}</h2>
                         </div>
@@ -187,7 +190,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
     },
-    imageEmoji: {
+    Icon: {
         fontSize: '80px',
     },
     content: {

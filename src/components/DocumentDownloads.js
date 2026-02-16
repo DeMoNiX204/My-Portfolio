@@ -1,5 +1,8 @@
 import React from 'react';
 import PDFViewer from './PDFViewer';
+import { FaGraduationCap } from "react-icons/fa6";
+import { HiMiniClipboard } from "react-icons/hi2";
+import { IoMdDocument } from "react-icons/io";
 
 function DocumentDownloads() {
     const documents = [
@@ -8,7 +11,7 @@ function DocumentDownloads() {
             subtitle: "ประวัติส่วนตัว",
             fileUrl: "/documents/chatchanan_cv.pdf",
             fileName: "chatchanan_cv.pdf",
-            icon: "📄",
+            icon: <IoMdDocument size={35}/>,
             color: "#DC2626"
         },
         {
@@ -16,7 +19,7 @@ function DocumentDownloads() {
             subtitle: "ประวัติการทำงาน",
             fileUrl: "/documents/chatchanan_resume.pdf",
             fileName: "chatchanan_resume.pdf",
-            icon: "📋",
+            icon: <HiMiniClipboard  size={35}/>,
             color: "#DC2626"
         },
         {
@@ -24,7 +27,7 @@ function DocumentDownloads() {
             subtitle: "ผลการศึกษา",
             fileUrl: "/documents/chatchanan_transcript.pdf",
             fileName: "chatchanan_transcript.pdf",
-            icon: "🎓",
+            icon: <FaGraduationCap size={35}/>,
             color: "#DC2626"
         }
     ];
@@ -46,7 +49,7 @@ function DocumentDownloads() {
                     <div key={index} style={styles.documentSection}>
                         <div style={styles.sectionHeader}>
                             <div style={{...styles.docIconBox, backgroundColor: doc.color + '15'}}>
-                                <span style={styles.docIcon}>{doc.icon}</span>
+                                {doc.icon}
                             </div>
                             <div style={styles.docInfo}>
                                 <h3 style={styles.docTitle}>{doc.title}</h3>
@@ -130,9 +133,6 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         flexShrink: 0,
-    },
-    docIcon: {
-        fontSize: '32px',
     },
     docInfo: {
         flex: 1,

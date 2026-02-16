@@ -1,4 +1,7 @@
 import React from 'react';
+import { TbMailFilled } from "react-icons/tb";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import { FaGithubSquare } from "react-icons/fa";
 
 function Contact() {
     const contactInfo = [
@@ -6,19 +9,19 @@ function Contact() {
             platform: "Email",
             value: "chatchanan918@gmail.com",
             link: "mailto:chatchanan918@gmail.com",
-            icon: "📧"
+            icon: <TbMailFilled size={30}/>
         },
         {
             platform: "GitHub",
             value: "github.com/DeMoNiX204",
             link: "https://github.com/DeMoNiX204",
-            icon: "💻"
+            icon: <FaGithubSquare size={30}/>
         },
         {
             platform: "Phone",
             value: "092-416-5647",
             link: "tel:092-416-5647",
-            icon: "📱"
+            icon: <IoPhonePortraitOutline size={30}/>
         }
     ];
 
@@ -37,15 +40,15 @@ function Contact() {
                 
                 <div style={styles.contactList}>
                     {contactInfo.map((contact, index) => (
-                        <a 
-                            key={index} 
-                            href={contact.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                        <a
+                            key={index}
+                            href={contact.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             style={styles.contactCard}
                         >
                             <div style={styles.iconBox}>
-                                <span style={styles.icon}>{contact.icon}</span>
+                                {contact.icon}
                             </div>
                             <div style={styles.info}>
                                 <h4 style={styles.platform}>{contact.platform}</h4>
@@ -66,7 +69,7 @@ function Contact() {
                         style={styles.ctaButton}
                         onClick={() => window.location.href = 'mailto:chatchanan918@gmail.com'}
                     >
-                        ✉️ ส่งอีเมลหาผม
+                        <TbMailFilled size={25}/> ส่งอีเมลหาผม
                     </button>
                 </div>
             </div>
@@ -155,9 +158,6 @@ const styles = {
         justifyContent: 'center',
         backgroundColor: 'rgba(220, 38, 38, 0.1)',
         flexShrink: 0,
-    },
-    icon: {
-        fontSize: '32px',
     },
     info: {
         flex: 1,
