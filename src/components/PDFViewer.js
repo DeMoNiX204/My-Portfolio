@@ -22,7 +22,6 @@ function PDFViewer({ fileUrl, fileName, accentColor = '#DC2626' }) {
             }
         };
 
-        // Small delay to ensure layout is complete
         const timer = setTimeout(updateWidth, 50);
 
         const observer = new ResizeObserver(() => {
@@ -75,7 +74,12 @@ function PDFViewer({ fileUrl, fileName, accentColor = '#DC2626' }) {
             {numPages > 1 && (
                 <div style={styles.pagination}>
                     <button
-                        style={{...styles.pageButton, borderColor: accentColor, color: accentColor}}
+                        style={{
+                            ...styles.pageButton,
+                            borderColor: pageNumber <= 1 ? '#ccc' : accentColor,
+                            color: pageNumber <= 1 ? '#ccc' : accentColor,
+                            opacity: pageNumber <= 1 ? 0.5 : 1,
+                        }}
                         onClick={goToPrevPage}
                         disabled={pageNumber <= 1}
                     >
@@ -89,7 +93,12 @@ function PDFViewer({ fileUrl, fileName, accentColor = '#DC2626' }) {
                     </div>
 
                     <button
-                        style={{...styles.pageButton, borderColor: accentColor, color: accentColor}}
+                        style={{
+                            ...styles.pageButton,
+                            borderColor: pageNumber >= numPages ? '#ccc' : accentColor,
+                            color: pageNumber >= numPages ? '#ccc' : accentColor,
+                            opacity: pageNumber >= numPages ? 0.5 : 1,
+                        }}
                         onClick={goToNextPage}
                         disabled={pageNumber >= numPages}
                     >
@@ -150,45 +159,46 @@ const styles = {
     },
     pagination: {
         display: 'flex',
+        flexDirection: 'row',
         alignItems: 'center',
-        gap: '20px',
+        justifyContent: 'space-between',
+        gap: '10px',
         marginBottom: '25px',
-        padding: '15px 25px',
+        padding: '12px 16px',
         backgroundColor: '#FFFFFF',
         borderRadius: '12px',
         border: '2px solid rgba(220, 38, 38, 0.1)',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
         width: '100%',
         boxSizing: 'border-box',
     },
     pageButton: {
-        padding: '10px 20px',
+        padding: '10px 16px',
         cursor: 'pointer',
         backgroundColor: 'transparent',
         border: '2px solid',
         borderRadius: '10px',
         fontWeight: '600',
-        fontSize: '14px',
+        fontSize: '13px',
         transition: 'all 0.3s ease',
         whiteSpace: 'nowrap',
+        flexShrink: 0,
     },
     pageInfo: {
         display: 'flex',
         alignItems: 'center',
-        gap: '8px',
-        padding: '0 15px',
+        gap: '6px',
+        flexShrink: 0,
     },
     currentPage: {
-        fontSize: '24px',
+        fontSize: '22px',
         fontWeight: '800',
     },
     pageSeparator: {
-        fontSize: '18px',
+        fontSize: '16px',
         color: '#CCC',
     },
     totalPages: {
-        fontSize: '18px',
+        fontSize: '16px',
         color: '#999',
         fontWeight: '500',
     },
