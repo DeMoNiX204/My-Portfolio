@@ -121,11 +121,14 @@ function Projects() {
                         transition={{ duration: 0.3 }}
                         onClick={(e) => e.stopPropagation()}
                     >
+                        {/* Close button outside header flow */}
                         <button style={styles.closeButton} onClick={() => setSelectedProject(null)}>✕</button>
+
                         <div style={styles.modalHeader}>
                             <div style={styles.modalIconBox}>{selectedProject.ModalIcon}</div>
                             <h2 style={styles.modalTitle}>{selectedProject.title}</h2>
                         </div>
+
                         <div style={styles.modalSection}>
                             <h4 style={styles.modalSubtitle}>📌 ภาพรวม</h4>
                             <p style={styles.modalText}>{selectedProject.details.overview}</p>
@@ -249,7 +252,8 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '8px', padding: '14px',
+        gap: '8px',
+        padding: '14px',
         backgroundColor: '#2d2d2d',
         color: '#FFFFFF',
         textDecoration: 'none',
@@ -275,8 +279,8 @@ const styles = {
         position: 'fixed',
         inset: 0,
         backgroundColor: 'rgba(0,0,0,0.75)',
-        display: 'flex',
-        justifyContent: 'center',
+        display: 'flex', 
+        ustifyContent: 'center',
         alignItems: 'center',
         zIndex: 9999,
         padding: '20px',
@@ -292,29 +296,36 @@ const styles = {
         overflowY: 'auto',
         position: 'relative',
         boxShadow: '0 25px 50px rgba(0,0,0,0.3)',
-        boxSizing: 'border-box' },
+        boxSizing: 'border-box'
+    },
     closeButton: {
         position: 'absolute',
-        top: '20px',
-        right: '20px',
-        width: '40px',
-        height: '40px',
+        top: '15px',
+        right: '15px',
+        width: '36px',
+        height: '36px',
         borderRadius: '50%',
-        backgroundColor: 'rgba(220,38,38,0.1)',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
         border: 'none',
-        fontSize: '20px',
+        fontSize: '16px',
         color: '#DC2626',
         cursor: 'pointer',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        zIndex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
     },
     modalHeader: {
         display: 'flex',
         alignItems: 'center',
         gap: '20px',
-        marginBottom: '40px',
+        marginBottom: '30px',
         paddingBottom: '25px',
+        paddingRight: '45px',  // ป้องกัน title ชนปุ่มปิด
         borderBottom: '2px solid rgba(220,38,38,0.1)',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
     },
     modalIconBox: {
         width: '55px',
@@ -329,7 +340,7 @@ const styles = {
         color: '#FFFFFF'
     },
     modalTitle: {
-        fontSize: 'clamp(20px, 4vw, 28px)',
+        fontSize: 'clamp(18px, 4vw, 26px)',
         color: '#1F1F1F',
         fontWeight: '700',
         margin: 0,
