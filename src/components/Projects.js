@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
 import { FaGithubSquare } from "react-icons/fa";
@@ -7,12 +7,22 @@ import { FaBook } from "react-icons/fa";
 function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
 
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => { document.body.style.overflow = ''; };
+    }, [selectedProject]);
+
     const projectList = [
         {
             title: "Sign Language Translation App",
             description: "แอปพลิเคชันบนมือถือสำหรับแปลภาษามือ พัฒนาระบบรับภาพผ่านกล้อง (Camera Activity) และประมวลผลวิดีโอเพื่อแปลความหมาย",
             techStack: ["Kotlin", "Android Studio"],
             Icon: <IoPhonePortraitOutline size={100}/>,
+            ModalIcon: <IoPhonePortraitOutline size={30}/>,
             githubLink: "https://github.com/DeMoNiX204/Hand_Sign",
             numberColor: "rgba(220, 38, 38, 0.30)",
             details: {
@@ -30,6 +40,7 @@ function Projects() {
             description: "เว็บไซต์ Portfolio ส่วนตัวเพื่อนำเสนอประวัติการศึกษา ทักษะ และผลงาน พัฒนาด้วย React และออกแบบ UI ให้รองรับการแสดงผลทุกหน้าจอ",
             techStack: ["React", "JavaScript", "HTML/CSS"],
             Icon: <BiWorld size={100}/>,
+            ModalIcon: <BiWorld size={30}/>,
             githubLink: "https://github.com/DeMoNiX204/My-Portfolio",
             numberColor: "rgba(248, 113, 113, 0.30)",
             details: {
@@ -55,16 +66,16 @@ function Projects() {
                     <p style={styles.subheading}>โปรเจกต์ที่ภูมิใจและแสดงถึงความสามารถของผม</p>
                 </div>
                 
-                <div className="row">
+                <div className="row justify-content-center">
                     {projectList.map((project, index) => (
-                        <div key={index} className="col-lg-6 col-md-12 mb-4">
+                        <div key={index} className="col-lg-5 col-md-12 mb-4">
                             <div style={styles.card}>
                                 <div style={styles.imageBox}>
                                     <span style={styles.Icon}>{project.Icon}</span>
                                 </div>
                                 
                                 <div style={styles.content}>
-                                    <div style={{...styles.projectHeader}}>
+                                    <div style={styles.projectHeader}>
                                         <h3 style={styles.projectTitle}>{project.title}</h3>
                                         <div style={{...styles.projectIndex, color: project.numberColor}}>0{index + 1}</div>
                                     </div>
@@ -113,7 +124,7 @@ function Projects() {
                         
                         <div style={styles.modalHeader}>
                             <div style={styles.modalIconBox}>
-                                <span style={styles.modalIcon}>{selectedProject.Icon}</span>
+                                {selectedProject.ModalIcon}
                             </div>
                             <h2 style={styles.modalTitle}>{selectedProject.title}</h2>
                         </div>
@@ -271,16 +282,14 @@ const styles = {
     },
     modalOverlay: {
         position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
+        inset: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.75)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        zIndex: 1000,
+        zIndex: 9999,
         padding: '20px',
+        boxSizing: 'border-box',
     },
     modalContent: {
         backgroundColor: '#FFFFFF',
@@ -292,6 +301,7 @@ const styles = {
         overflowY: 'auto',
         position: 'relative',
         boxShadow: '0 25px 50px rgba(0, 0, 0, 0.3)',
+        boxSizing: 'border-box',
     },
     closeButton: {
         position: 'absolute',
@@ -306,6 +316,7 @@ const styles = {
         color: '#DC2626',
         cursor: 'pointer',
         fontWeight: 'bold',
+        flexShrink: 0,
     },
     modalHeader: {
         display: 'flex',
@@ -317,17 +328,16 @@ const styles = {
         flexWrap: 'wrap',
     },
     modalIconBox: {
-        width: '70px',
-        height: '70px',
-        borderRadius: '16px',
+        width: '55px',
+        height: '55px',
+        borderRadius: '14px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         background: 'linear-gradient(135deg, #DC2626 0%, #EF4444 100%)',
         flexShrink: 0,
-    },
-    modalIcon: {
-        fontSize: '36px',
+        overflow: 'hidden',
+        color: '#FFFFFF',
     },
     modalTitle: {
         fontSize: 'clamp(20px, 4vw, 28px)',
@@ -335,6 +345,9 @@ const styles = {
         fontWeight: '700',
         margin: 0,
         lineHeight: '1.2',
+        flex: 1,
+        minWidth: 0,
+        wordBreak: 'break-word',
     },
     modalSection: {
         marginBottom: '30px',

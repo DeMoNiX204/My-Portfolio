@@ -38,13 +38,13 @@ function Skills() {
                     </p>
                 </div>
                 
-                <div className="row">
+                <div className="row justify-content-center">
                     {skillCategories.map((category, index) => (
-                        <div key={index} className="col-lg-4 col-md-6 col-12 mb-4">
+                        <div key={index} className="col-lg-3 col-md-6 col-12 mb-4">
                             <div style={styles.card}>
                                 <div style={styles.cardHeader}>
                                     <div style={styles.iconBox}>
-                                       {category.icon}
+                                        {category.icon}
                                     </div>
                                     <div style={{...styles.cardNumber, color: category.numberColor}}>0{index + 1}</div>
                                 </div>
