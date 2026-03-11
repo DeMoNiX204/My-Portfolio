@@ -3,6 +3,7 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
+
 function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
 
@@ -13,7 +14,7 @@ function Projects() {
             techStack: ["Kotlin", "Android Studio"],
             Icon: <IoPhonePortraitOutline size={100}/>,
             githubLink: "https://github.com/DeMoNiX204/Hand_Sign",
-            numberColor: "rgba(220, 38, 38, 0.30)", // สีแดงเข้ม
+            numberColor: "rgba(220, 38, 38, 0.30)",
             details: {
                 overview: "โปรเจกต์จบที่มุ่งเน้นการทลายกำแพงการสื่อสาร โดยการสร้างแอปพลิเคชันที่สามารถแปลภาษามือได้ผ่านกล้องมือถือ",
                 features: [
@@ -30,7 +31,7 @@ function Projects() {
             techStack: ["React", "JavaScript", "HTML/CSS"],
             Icon: <BiWorld size={100}/>,
             githubLink: "https://github.com/DeMoNiX204/My-Portfolio",
-            numberColor: "rgba(248, 113, 113, 0.30)", // สีแดงอ่อน
+            numberColor: "rgba(248, 113, 113, 0.30)",
             details: {
                 overview: "เว็บไซต์สำหรับรวบรวมผลงานและประวัติการศึกษา เพื่อใช้ในการสมัครงานและนำเสนอทักษะทางด้าน Web Development",
                 features: [
@@ -45,56 +46,62 @@ function Projects() {
 
     return (
         <section id="projects" style={styles.container}>
-            <div style={styles.header}>
-                <div style={styles.labelBadge}>Portfolio</div>
-                <h2 style={styles.heading}>
-                    Featured <span style={styles.headingHighlight}>Projects</span>
-                </h2>
-                <p style={styles.subheading}>โปรเจกต์ที่ภูมิใจและแสดงถึงความสามารถของผม</p>
-            </div>
-            
-            <div style={styles.grid}>
-                {projectList.map((project, index) => (
-                    <div key={index} style={styles.card}>
-                        <div style={styles.imageBox}>
-                            <span style={styles.Icon}>{project.Icon}</span>
+            <div className="container-fluid">
+                <div style={styles.header}>
+                    <div style={styles.labelBadge}>Portfolio</div>
+                    <h2 style={styles.heading}>
+                        Featured <span style={styles.headingHighlight}>Projects</span>
+                    </h2>
+                    <p style={styles.subheading}>โปรเจกต์ที่ภูมิใจและแสดงถึงความสามารถของผม</p>
+                </div>
+                
+                <div className="row">
+                    {projectList.map((project, index) => (
+                        <div key={index} className="col-lg-6 col-md-12 mb-4">
+                            <div style={styles.card}>
+                                <div style={styles.imageBox}>
+                                    <span style={styles.Icon}>{project.Icon}</span>
+                                </div>
+                                
+                                <div style={styles.content}>
+                                    <div style={{...styles.projectHeader}}>
+                                        <h3 style={styles.projectTitle}>{project.title}</h3>
+                                        <div style={{...styles.projectIndex, color: project.numberColor}}>0{index + 1}</div>
+                                    </div>
+                                    
+                                    <p style={styles.projectDesc}>{project.description}</p>
+                                    
+                                    <div style={styles.techList}>
+                                        {project.techStack.map((tech, techIndex) => (
+                                            <span key={techIndex} style={styles.techTag}>
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    
+                                    <div className="d-flex flex-column flex-sm-row gap-3">
+                                        <a
+                                            href={project.githubLink}
+                                            style={styles.linkButton}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="flex-fill"
+                                        >
+                                            <FaGithubSquare size={25}/> GitHub
+                                        </a>
+                                        <button
+                                            style={styles.detailsButton}
+                                            onClick={() => setSelectedProject(project)}
+                                            className="flex-fill"
+                                        >
+                                            <FaBook size={25}/> รายละเอียด
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div style={styles.content}>
-                            <div style={{...styles.projectHeader}}>
-                                <h3 style={styles.projectTitle}>{project.title}</h3>
-                                <div style={{...styles.projectIndex, color: project.numberColor}}>0{index + 1}</div>
-                            </div>
-                            
-                            <p style={styles.projectDesc}>{project.description}</p>
-                            
-                            <div style={styles.techList}>
-                                {project.techStack.map((tech, techIndex) => (
-                                    <span key={techIndex} style={styles.techTag}>
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                            
-                            <div style={styles.links}>
-                                <a
-                                    href={project.githubLink}
-                                    style={styles.linkButton}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <FaGithubSquare size={25}/> GitHub
-                                </a>
-                                <button
-                                    style={styles.detailsButton}
-                                    onClick={() => setSelectedProject(project)}
-                                >
-                                    <FaBook size={25}/> รายละเอียด
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
             {selectedProject && (
@@ -171,17 +178,13 @@ const styles = {
         fontSize: '18px',
         color: '#666',
     },
-    grid: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
-        gap: '40px',
-    },
     card: {
         backgroundColor: '#FAFAFA',
         borderRadius: '24px',
         overflow: 'hidden',
         border: '2px solid rgba(220, 38, 38, 0.1)',
         transition: 'all 0.3s ease',
+        height: '100%',
     },
     imageBox: {
         height: '250px',
@@ -236,12 +239,7 @@ const styles = {
         fontSize: '13px',
         fontWeight: '600',
     },
-    links: {
-        display: 'flex',
-        gap: '12px',
-    },
     linkButton: {
-        flex: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -256,7 +254,6 @@ const styles = {
         transition: 'all 0.3s ease',
     },
     detailsButton: {
-        flex: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -282,12 +279,13 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: 1000,
+        padding: '20px',
     },
     modalContent: {
         backgroundColor: '#FFFFFF',
         padding: '50px',
         borderRadius: '24px',
-        width: '90%',
+        width: '100%',
         maxWidth: '700px',
         maxHeight: '85vh',
         overflowY: 'auto',

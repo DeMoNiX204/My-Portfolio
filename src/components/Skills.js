@@ -9,68 +9,78 @@ function Skills() {
             title: "Programming Languages",
             icon: <FaComputer size={30}/>,
             skills: ["C","Java","Kotlin", "JavaScript", "HTML/CSS"],
-            numberColor: "rgba(220, 38, 38, 0.30)" // 30% opacity - เห็นชัดที่สุด
+            numberColor: "rgba(220, 38, 38, 0.30)"
         },
         {
             title: "Libraries & Technologies",
             icon: <FaBook size={30}/>,
             skills: ["React", "Mobile App Development", "Image Processing"],
-            numberColor: "rgba(220, 38, 38, 0.30)" // 30% opacity - เห็นชัดที่สุด
+            numberColor: "rgba(220, 38, 38, 0.30)"
         },
         {
             title: "Tools & Environments",
             icon: <FaTools size={30}/>,
             skills: ["Android Studio", "Google Colab", "Git", "GitHub"],
-            numberColor: "rgba(220, 38, 38, 0.30)" // 30% opacity - เห็นชัดที่สุด
+            numberColor: "rgba(220, 38, 38, 0.30)"
         }
     ];
 
     return (
         <section style={styles.container}>
-            <div style={styles.header}>
-                <div style={styles.labelBadge}>Expertise</div>
-                <h2 style={styles.heading}>
-                    My <span style={styles.headingHighlight}>Skills</span>
-                </h2>
-                <p style={styles.subheading}>
-                    เทคโนโลยีและเครื่องมือที่ผมใช้งานได้อย่างคล่องแคล่ว
-                </p>
-            </div>
-            
-            <div style={styles.grid}>
-                {skillCategories.map((category, index) => (
-                    <div key={index} style={styles.card}>
-                        <div style={styles.cardHeader}>
-                            <div style={styles.iconBox}>
-                               {category.icon}
+            <div className="container-fluid">
+                <div style={styles.header}>
+                    <div style={styles.labelBadge}>Expertise</div>
+                    <h2 style={styles.heading}>
+                        My <span style={styles.headingHighlight}>Skills</span>
+                    </h2>
+                    <p style={styles.subheading}>
+                        เทคโนโลยีและเครื่องมือที่ผมใช้งานได้อย่างคล่องแคล่ว
+                    </p>
+                </div>
+                
+                <div className="row">
+                    {skillCategories.map((category, index) => (
+                        <div key={index} className="col-lg-4 col-md-6 col-12 mb-4">
+                            <div style={styles.card}>
+                                <div style={styles.cardHeader}>
+                                    <div style={styles.iconBox}>
+                                       {category.icon}
+                                    </div>
+                                    <div style={{...styles.cardNumber, color: category.numberColor}}>0{index + 1}</div>
+                                </div>
+                                
+                                <h3 style={styles.categoryTitle}>{category.title}</h3>
+                                
+                                <div style={styles.skillTags}>
+                                    {category.skills.map((skill, skillIndex) => (
+                                        <span key={skillIndex} style={styles.tag}>
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                                
+                                <div style={styles.cardAccent}></div>
                             </div>
-                            <div style={{...styles.cardNumber, color: category.numberColor}}>0{index + 1}</div>
-                        </div>
-                        
-                        <h3 style={styles.categoryTitle}>{category.title}</h3>
-                        
-                        <div style={styles.skillTags}>
-                            {category.skills.map((skill, skillIndex) => (
-                                <span key={skillIndex} style={styles.tag}>
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
-                        
-                        <div style={styles.cardAccent}></div>
-                    </div>
-                ))}
-            </div>
-
-            <div style={styles.additionalSkills}>
-                <h3 style={styles.additionalTitle}>เพิ่มเติม</h3>
-                <div style={styles.additionalGrid}>
-                    {['Problem Solving', 'Team Collaboration', 'Quick Learner', 'Attention to Detail'].map((skill, index) => (
-                        <div key={index} style={styles.additionalItem}>
-                            <div style={styles.checkmark}>✓</div>
-                            <span>{skill}</span>
                         </div>
                     ))}
+                </div>
+
+                <div className="row justify-content-center">
+                    <div className="col-lg-10 col-12">
+                        <div style={styles.additionalSkills}>
+                            <h3 style={styles.additionalTitle}>เพิ่มเติม</h3>
+                            <div className="row">
+                                {['Problem Solving', 'Team Collaboration', 'Quick Learner', 'Attention to Detail'].map((skill, index) => (
+                                    <div key={index} className="col-md-6 col-12 mb-3">
+                                        <div style={styles.additionalItem}>
+                                            <div style={styles.checkmark}>✓</div>
+                                            <span>{skill}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -112,12 +122,6 @@ const styles = {
         fontSize: '18px',
         color: '#666',
     },
-    grid: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '30px',
-        marginBottom: '80px',
-    },
     card: {
         backgroundColor: '#FFFFFF',
         padding: '40px',
@@ -127,6 +131,7 @@ const styles = {
         overflow: 'hidden',
         transition: 'all 0.3s ease',
         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+        height: '100%',
     },
     cardHeader: {
         display: 'flex',
@@ -178,8 +183,6 @@ const styles = {
         borderRadius: '0 0 20px 20px',
     },
     additionalSkills: {
-        maxWidth: '900px',
-        margin: '0 auto',
         padding: '50px',
         backgroundColor: '#FFFFFF',
         borderRadius: '20px',
@@ -192,11 +195,6 @@ const styles = {
         marginBottom: '30px',
         fontWeight: '700',
         textAlign: 'center',
-    },
-    additionalGrid: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '20px',
     },
     additionalItem: {
         display: 'flex',

@@ -5,65 +5,76 @@ import { TbMailFilled } from "react-icons/tb";
 function Hero() {
     return (
         <section style={styles.container}>
-            <div style={styles.textContent}>
-                <div style={styles.badge}>
-                    <span style={styles.badgeDot}></span>
-                    Available for Work
-                </div>
-                <h2 style={styles.greeting}>สวัสดีครับ 👋</h2>
-                <h1 style={styles.name}>
-                    ผม <span style={styles.nameHighlight}>ฉัทชนันท์ พันธเสน</span>
-                </h1>
-                
-                <h3 style={styles.role}>Software & Mobile Developer</h3>
-                <div style={styles.roleUnderline}></div>
-                
-                <p style={styles.description}>
-                    นักศึกษาจบกำลังหาที่ฝึกงานที่มีความหลงใหลในการเขียนโค้ดและพัฒนาแอปพลิเคชัน
-                    มีประสบการณ์ในการพัฒนา Mobile App และ Web Application ด้วย React
-                    พร้อมเรียนรู้เทคโนโลยีใหม่ๆ และเปิดรับโอกาสในการทำงานจริง
-                </p>
-                
-                <div style={styles.buttonGroup}>
-                    <button 
-                        style={styles.primaryButton}
-                        onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                    >
-                        <IoIosBriefcase size={20}/> ดูผลงานของฉัน
-                    </button>
-                    <button 
-                        style={styles.secondaryButton}
-                        onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                    >
-                        <TbMailFilled size={20}/> ติดต่อฉัน
-                    </button>
-                </div>
+            <div className="container-fluid">
+                <div className="row align-items-center">
+                    {/* Text Content */}
+                    <div className="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                        <div style={styles.textContent}>
+                            <div style={styles.badge}>
+                                <span style={styles.badgeDot}></span>
+                                Available for Work
+                            </div>
+                            <h2 style={styles.greeting}>สวัสดีครับ 👋</h2>
+                            <h1 style={styles.name}>
+                                ผม <span style={styles.nameHighlight}>ฉัทชนันท์ พันธเสน</span>
+                            </h1>
+                            
+                            <h3 style={styles.role}>Software & Mobile Developer</h3>
+                            <div style={styles.roleUnderline}></div>
+                            
+                            <p style={styles.description}>
+                                นักศึกษาจบกำลังหาที่ฝึกงานที่มีความหลงใหลในการเขียนโค้ดและพัฒนาแอปพลิเคชัน
+                                มีประสบการณ์ในการพัฒนา Mobile App และ Web Application ด้วย React
+                                พร้อมเรียนรู้เทคโนโลยีใหม่ๆ และเปิดรับโอกาสในการทำงานจริง
+                            </p>
+                            
+                            <div className="d-flex flex-wrap gap-3 mb-4">
+                                <button 
+                                    style={styles.primaryButton}
+                                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                                >
+                                    <IoIosBriefcase size={20}/> ดูผลงานของฉัน
+                                </button>
+                                <button 
+                                    style={styles.secondaryButton}
+                                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                                >
+                                    <TbMailFilled size={20}/> ติดต่อฉัน
+                                </button>
+                            </div>
 
-                <div style={styles.statsContainer}>
-                    <div style={styles.statItem}>
-                        <div style={styles.statNumber}>2+</div>
-                        <div style={styles.statLabel}>โปรเจกต์</div>
+                            <div className="d-flex flex-wrap align-items-center gap-4">
+                                <div style={styles.statItem}>
+                                    <div style={styles.statNumber}>2+</div>
+                                    <div style={styles.statLabel}>โปรเจกต์</div>
+                                </div>
+                                <div style={styles.statDivider} className="d-none d-sm-block"></div>
+                                <div style={styles.statItem}>
+                                    <div style={styles.statNumber}>5+</div>
+                                    <div style={styles.statLabel}>เทคโนโลยี</div>
+                                </div>
+                                <div style={styles.statDivider} className="d-none d-sm-block"></div>
+                                <div style={styles.statItem}>
+                                    <div style={styles.statNumber}>100%</div>
+                                    <div style={styles.statLabel}>ความตั้งใจ</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div style={styles.statDivider}></div>
-                    <div style={styles.statItem}>
-                        <div style={styles.statNumber}>5+</div>
-                        <div style={styles.statLabel}>เทคโนโลยี</div>
-                    </div>
-                    <div style={styles.statDivider}></div>
-                    <div style={styles.statItem}>
-                        <div style={styles.statNumber}>100%</div>
-                        <div style={styles.statLabel}>ความตั้งใจ</div>
-                    </div>
-                </div>
-            </div>
 
-            <div style={styles.imageContent}>
-                <div style={styles.imageFrame}>
-                    <img
-                        src="/images/profile.jpg"
-                        alt="My Profile"
-                        style={styles.profilePic}
-                    />
+                    {/* Image Content */}
+                    <div className="col-lg-6 col-md-12">
+                        <div className="d-flex justify-content-center align-items-center">
+                            <div style={styles.imageFrame}>
+                                <img
+                                    src="/images/profile.jpg"
+                                    alt="My Profile"
+                                    style={styles.profilePic}
+                                    className="img-fluid"
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -72,19 +83,14 @@ function Hero() {
 
 const styles = {
     container: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
         padding: '100px 8%',
         background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
         minHeight: '90vh',
-        flexWrap: 'wrap',
-        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
     },
     textContent: {
-        flex: 1,
-        minWidth: '320px',
-        paddingRight: '40px',
+        paddingRight: '20px',
     },
     badge: {
         display: 'inline-flex',
@@ -142,12 +148,6 @@ const styles = {
         marginBottom: '40px',
         maxWidth: '540px',
     },
-    buttonGroup: {
-        display: 'flex',
-        gap: '18px',
-        marginBottom: '50px',
-        flexWrap: 'wrap',
-    },
     primaryButton: {
         display: 'flex',
         alignItems: 'center',
@@ -176,11 +176,6 @@ const styles = {
         fontWeight: '600',
         transition: 'all 0.3s ease',
     },
-    statsContainer: {
-        display: 'flex',
-        gap: '30px',
-        alignItems: 'center',
-    },
     statItem: {
         textAlign: 'left',
     },
@@ -200,18 +195,12 @@ const styles = {
         height: '40px',
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
     },
-    imageContent: {
-        flex: 1,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minWidth: '300px',
-        marginTop: '20px',
-    },
     imageFrame: {
         position: 'relative',
-        width: '350px',
-        height: '350px',
+        width: '100%',
+        maxWidth: '350px',
+        height: 'auto',
+        aspectRatio: '1/1',
     },
     profilePic: {
         width: '100%',
