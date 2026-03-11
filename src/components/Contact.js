@@ -91,11 +91,8 @@ function Contact() {
                     viewport={{ once: true, amount: 0.2 }}
                     variants={fadeInUp}
                 >
-                    <h3 style={styles.ctaTitle}>พร้อมเริ่มโปรเจกต์ใหม่?</h3>
-                    <p style={styles.ctaText}>
-                        ผมพร้อมที่จะช่วยพัฒนาไอเดียของคุณให้เป็นจริง<br/>
-                        มาร่วมงานกันและสร้างสิ่งที่ยอดเยี่ยม
-                    </p>
+                    <h3 style={styles.ctaTitle}>Contact Me!</h3>
+                    <p style={styles.ctaText}></p>
                     <form ref={formRef} onSubmit={handleSubmit} style={styles.form}>
                         <div style={styles.formRow}>
                             <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required style={styles.input}/>
