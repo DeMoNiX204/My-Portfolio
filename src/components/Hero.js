@@ -83,14 +83,16 @@ function Hero() {
 
 const styles = {
     container: {
-        padding: '100px 8%',
+        padding: 'clamp(60px, 8vw, 100px) 5%',
         background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
         minHeight: '90vh',
         display: 'flex',
         alignItems: 'center',
+        overflowX: 'hidden',
     },
     textContent: {
-        paddingRight: '20px',
+        paddingRight: '10px',
+        maxWidth: '100%',
     },
     badge: {
         display: 'inline-flex',
@@ -110,25 +112,27 @@ const styles = {
         height: '8px',
         backgroundColor: '#EF4444',
         borderRadius: '50%',
+        flexShrink: 0,
     },
     greeting: {
-        fontSize: '28px',
+        fontSize: 'clamp(20px, 5vw, 28px)',
         color: '#A0A0A0',
         marginBottom: '15px',
         fontWeight: '400',
     },
     name: {
-        fontSize: '48px',
+        fontSize: 'clamp(28px, 6vw, 48px)',
         color: '#FFFFFF',
         marginBottom: '10px',
         fontWeight: '800',
         lineHeight: '1.2',
+        wordBreak: 'break-word',
     },
     nameHighlight: {
         color: '#DC2626',
     },
     role: {
-        fontSize: '32px',
+        fontSize: 'clamp(20px, 4vw, 32px)',
         color: '#FFFFFF',
         fontWeight: '600',
         marginBottom: '8px',
@@ -138,15 +142,16 @@ const styles = {
         height: '4px',
         background: '#DC2626',
         borderRadius: '2px',
-        width: '200px',
+        width: 'clamp(120px, 40vw, 200px)',
         marginBottom: '30px',
     },
     description: {
-        fontSize: '17px',
+        fontSize: 'clamp(14px, 3vw, 17px)',
         color: '#B0B0B0',
         lineHeight: '1.8',
         marginBottom: '40px',
         maxWidth: '540px',
+        wordBreak: 'break-word',
     },
     primaryButton: {
         display: 'flex',
@@ -161,6 +166,7 @@ const styles = {
         cursor: 'pointer',
         fontWeight: '600',
         transition: 'all 0.3s ease',
+        whiteSpace: 'nowrap',
     },
     secondaryButton: {
         display: 'flex',
@@ -175,12 +181,13 @@ const styles = {
         cursor: 'pointer',
         fontWeight: '600',
         transition: 'all 0.3s ease',
+        whiteSpace: 'nowrap',
     },
     statItem: {
         textAlign: 'left',
     },
     statNumber: {
-        fontSize: '32px',
+        fontSize: 'clamp(24px, 5vw, 32px)',
         fontWeight: '800',
         color: '#DC2626',
         marginBottom: '5px',
@@ -198,9 +205,10 @@ const styles = {
     imageFrame: {
         position: 'relative',
         width: '100%',
-        maxWidth: '350px',
+        maxWidth: '300px',
         height: 'auto',
         aspectRatio: '1/1',
+        margin: '30px auto 0 auto',
     },
     profilePic: {
         width: '100%',

@@ -14,6 +14,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Custom Scrollbar */
@@ -59,17 +60,32 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Responsive */
+/* Responsive Typography */
 @media (max-width: 768px) {
   h1 {
-    font-size: 32px !important;
+    font-size: clamp(24px, 7vw, 36px) !important;
+    word-break: break-word;
   }
   
   h2 {
-    font-size: 28px !important;
+    font-size: clamp(22px, 6vw, 32px) !important;
   }
   
   h3 {
-    font-size: 20px !important;
+    font-size: clamp(18px, 5vw, 22px) !important;
+  }
+}
+
+/* Prevent horizontal scroll globally */
+#root {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Mobile padding adjustments */
+@media (max-width: 576px) {
+  section {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
   }
 }

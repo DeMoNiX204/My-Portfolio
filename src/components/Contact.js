@@ -93,8 +93,9 @@ function Contact() {
 
 const styles = {
     container: {
-        padding: '100px 8% 0 8%',
+        padding: 'clamp(60px, 8vw, 100px) 5% 0 5%',
         backgroundColor: '#FAFAFA',
+        overflowX: 'hidden',
     },
     content: {
         position: 'relative',
@@ -117,7 +118,7 @@ const styles = {
         border: '1px solid rgba(220, 38, 38, 0.2)',
     },
     heading: {
-        fontSize: '48px',
+        fontSize: 'clamp(32px, 6vw, 48px)',
         color: '#1F1F1F',
         marginBottom: '15px',
         fontWeight: '800',
@@ -126,7 +127,7 @@ const styles = {
         color: '#DC2626',
     },
     subHeading: {
-        fontSize: '18px',
+        fontSize: 'clamp(15px, 3vw, 18px)',
         color: '#666',
     },
     contactList: {
@@ -139,8 +140,8 @@ const styles = {
     contactCard: {
         display: 'flex',
         alignItems: 'center',
-        gap: '25px',
-        padding: '30px',
+        gap: '20px',
+        padding: '20px',
         backgroundColor: '#FFFFFF',
         border: '2px solid rgba(220, 38, 38, 0.1)',
         borderRadius: '16px',
@@ -148,10 +149,11 @@ const styles = {
         color: 'inherit',
         transition: 'all 0.3s ease',
         boxShadow: '0 8px 20px rgba(0, 0, 0, 0.06)',
+        minWidth: 0,
     },
     iconBox: {
-        width: '70px',
-        height: '70px',
+        width: '60px',
+        height: '60px',
         borderRadius: '14px',
         display: 'flex',
         alignItems: 'center',
@@ -162,41 +164,45 @@ const styles = {
     info: {
         flex: 1,
         textAlign: 'left',
+        minWidth: 0,
+        overflow: 'hidden',
     },
     platform: {
-        fontSize: '20px',
+        fontSize: 'clamp(16px, 4vw, 20px)',
         color: '#1F1F1F',
-        margin: '0 0 8px 0',
+        margin: '0 0 6px 0',
         fontWeight: '700',
     },
     value: {
-        fontSize: '15px',
+        fontSize: 'clamp(12px, 3vw, 15px)',
         color: '#DC2626',
         margin: '0',
         fontWeight: '500',
+        wordBreak: 'break-all',
     },
     arrow: {
         fontSize: '24px',
         color: '#DC2626',
         fontWeight: 'bold',
+        flexShrink: 0,
     },
     ctaBox: {
         maxWidth: '700px',
         margin: '0 auto 80px auto',
-        padding: '60px',
+        padding: 'clamp(30px, 5vw, 60px)',
         background: 'linear-gradient(135deg, #1F1F1F 0%, #2d2d2d 100%)',
         borderRadius: '24px',
         textAlign: 'center',
         boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
     },
     ctaTitle: {
-        fontSize: '32px',
+        fontSize: 'clamp(22px, 5vw, 32px)',
         color: '#FFFFFF',
         marginBottom: '15px',
         fontWeight: '700',
     },
     ctaText: {
-        fontSize: '17px',
+        fontSize: 'clamp(14px, 3vw, 17px)',
         color: '#B0B0B0',
         lineHeight: '1.7',
         marginBottom: '35px',
@@ -226,15 +232,16 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         flexWrap: 'wrap',
-        gap: '30px',
+        gap: '20px',
         maxWidth: '1200px',
         margin: '0 auto',
     },
     footerLeft: {
         flex: 1,
+        minWidth: '150px',
     },
     footerLogo: {
-        fontSize: '28px',
+        fontSize: 'clamp(20px, 4vw, 28px)',
         fontWeight: '800',
         color: '#DC2626',
         marginBottom: '8px',
@@ -247,6 +254,7 @@ const styles = {
     footerRight: {
         flex: 1,
         textAlign: 'right',
+        minWidth: '150px',
     },
     footerText: {
         color: '#888',

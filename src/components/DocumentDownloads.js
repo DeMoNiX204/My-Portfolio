@@ -75,8 +75,9 @@ function DocumentDownloads() {
 
 const styles = {
     container: {
-        padding: '100px 8%',
+        padding: 'clamp(60px, 8vw, 100px) 5%',
         backgroundColor: '#FFFFFF',
+        overflowX: 'hidden',
     },
     header: {
         textAlign: 'center',
@@ -96,7 +97,7 @@ const styles = {
         border: '1px solid rgba(220, 38, 38, 0.2)',
     },
     heading: {
-        fontSize: '48px',
+        fontSize: 'clamp(32px, 6vw, 48px)',
         color: '#1F1F1F',
         marginBottom: '15px',
         fontWeight: '800',
@@ -105,7 +106,7 @@ const styles = {
         color: '#DC2626',
     },
     subheading: {
-        fontSize: '18px',
+        fontSize: 'clamp(15px, 3vw, 18px)',
         color: '#666',
     },
     documentsContainer: {
@@ -118,12 +119,13 @@ const styles = {
     sectionHeader: {
         display: 'flex',
         alignItems: 'center',
-        gap: '25px',
+        gap: '20px',
         marginBottom: '40px',
-        padding: '30px',
+        padding: 'clamp(20px, 3vw, 30px)',
         backgroundColor: '#FAFAFA',
         borderRadius: '20px',
         border: '2px solid rgba(220, 38, 38, 0.1)',
+        flexWrap: 'wrap',
     },
     docIconBox: {
         width: '70px',
@@ -136,9 +138,10 @@ const styles = {
     },
     docInfo: {
         flex: 1,
+        minWidth: '150px',
     },
     docTitle: {
-        fontSize: '28px',
+        fontSize: 'clamp(20px, 4vw, 28px)',
         color: '#1F1F1F',
         margin: '0 0 8px 0',
         fontWeight: '700',
@@ -152,6 +155,7 @@ const styles = {
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
+        overflowX: 'auto',
     },
     divider: {
         height: '2px',

@@ -145,8 +145,9 @@ function Projects() {
 
 const styles = {
     container: {
-        padding: '100px 8%',
+        padding: 'clamp(60px, 8vw, 100px) 5%',
         backgroundColor: '#FFFFFF',
+        overflowX: 'hidden',
     },
     header: {
         textAlign: 'center',
@@ -166,7 +167,7 @@ const styles = {
         border: '1px solid rgba(220, 38, 38, 0.2)',
     },
     heading: {
-        fontSize: '48px',
+        fontSize: 'clamp(32px, 6vw, 48px)',
         color: '#1F1F1F',
         marginBottom: '15px',
         fontWeight: '800',
@@ -175,7 +176,7 @@ const styles = {
         color: '#DC2626',
     },
     subheading: {
-        fontSize: '18px',
+        fontSize: 'clamp(15px, 3vw, 18px)',
         color: '#666',
     },
     card: {
@@ -187,7 +188,7 @@ const styles = {
         height: '100%',
     },
     imageBox: {
-        height: '250px',
+        height: '220px',
         background: 'linear-gradient(135deg, #DC2626 0%, #EF4444 100%)',
         display: 'flex',
         alignItems: 'center',
@@ -197,7 +198,7 @@ const styles = {
         fontSize: '80px',
     },
     content: {
-        padding: '35px',
+        padding: 'clamp(20px, 4vw, 35px)',
         backgroundColor: '#FFFFFF',
     },
     projectHeader: {
@@ -207,7 +208,7 @@ const styles = {
         marginBottom: '15px',
     },
     projectTitle: {
-        fontSize: '24px',
+        fontSize: 'clamp(18px, 3vw, 24px)',
         color: '#1F1F1F',
         fontWeight: '700',
         flex: 1,
@@ -220,7 +221,7 @@ const styles = {
         marginLeft: '15px',
     },
     projectDesc: {
-        fontSize: '15px',
+        fontSize: 'clamp(13px, 2.5vw, 15px)',
         color: '#666',
         lineHeight: '1.7',
         marginBottom: '25px',
@@ -283,7 +284,7 @@ const styles = {
     },
     modalContent: {
         backgroundColor: '#FFFFFF',
-        padding: '50px',
+        padding: 'clamp(25px, 5vw, 50px)',
         borderRadius: '24px',
         width: '100%',
         maxWidth: '700px',
@@ -294,8 +295,8 @@ const styles = {
     },
     closeButton: {
         position: 'absolute',
-        top: '25px',
-        right: '25px',
+        top: '20px',
+        right: '20px',
         width: '40px',
         height: '40px',
         borderRadius: '50%',
@@ -313,6 +314,7 @@ const styles = {
         marginBottom: '40px',
         paddingBottom: '25px',
         borderBottom: '2px solid rgba(220, 38, 38, 0.1)',
+        flexWrap: 'wrap',
     },
     modalIconBox: {
         width: '70px',
@@ -328,7 +330,7 @@ const styles = {
         fontSize: '36px',
     },
     modalTitle: {
-        fontSize: '28px',
+        fontSize: 'clamp(20px, 4vw, 28px)',
         color: '#1F1F1F',
         fontWeight: '700',
         margin: 0,

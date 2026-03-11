@@ -89,8 +89,9 @@ function Skills() {
 
 const styles = {
     container: {
-        padding: '100px 8%',
+        padding: 'clamp(60px, 8vw, 100px) 5%',
         backgroundColor: '#FAFAFA',
+        overflowX: 'hidden',
     },
     header: {
         textAlign: 'center',
@@ -110,7 +111,7 @@ const styles = {
         border: '1px solid rgba(220, 38, 38, 0.2)',
     },
     heading: {
-        fontSize: '48px',
+        fontSize: 'clamp(32px, 6vw, 48px)',
         color: '#1F1F1F',
         marginBottom: '15px',
         fontWeight: '800',
@@ -119,12 +120,12 @@ const styles = {
         color: '#DC2626',
     },
     subheading: {
-        fontSize: '18px',
+        fontSize: 'clamp(15px, 3vw, 18px)',
         color: '#666',
     },
     card: {
         backgroundColor: '#FFFFFF',
-        padding: '40px',
+        padding: 'clamp(25px, 4vw, 40px)',
         borderRadius: '20px',
         border: '2px solid rgba(220, 38, 38, 0.1)',
         position: 'relative',
@@ -147,6 +148,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        flexShrink: 0,
     },
     cardNumber: {
         fontSize: '48px',
@@ -154,7 +156,7 @@ const styles = {
         lineHeight: '1',
     },
     categoryTitle: {
-        fontSize: '24px',
+        fontSize: 'clamp(18px, 3vw, 24px)',
         color: '#1F1F1F',
         marginBottom: '25px',
         fontWeight: '700',
@@ -162,14 +164,14 @@ const styles = {
     skillTags: {
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '12px',
+        gap: '10px',
     },
     tag: {
         backgroundColor: 'rgba(220, 38, 38, 0.08)',
         color: '#1F1F1F',
-        padding: '10px 18px',
+        padding: '8px 14px',
         borderRadius: '10px',
-        fontSize: '14px',
+        fontSize: 'clamp(12px, 2vw, 14px)',
         fontWeight: '600',
         transition: 'all 0.3s ease',
     },
@@ -183,14 +185,14 @@ const styles = {
         borderRadius: '0 0 20px 20px',
     },
     additionalSkills: {
-        padding: '50px',
+        padding: 'clamp(30px, 5vw, 50px)',
         backgroundColor: '#FFFFFF',
         borderRadius: '20px',
         border: '2px solid rgba(220, 38, 38, 0.1)',
         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
     },
     additionalTitle: {
-        fontSize: '28px',
+        fontSize: 'clamp(22px, 4vw, 28px)',
         color: '#1F1F1F',
         marginBottom: '30px',
         fontWeight: '700',
