@@ -66,21 +66,94 @@ function DocumentDownloads() {
 }
 
 const styles = {
-    container: { padding: 'clamp(60px, 8vw, 100px) 5%', backgroundColor: '#FFFFFF', overflowX: 'hidden' },
-    header: { textAlign: 'center', marginBottom: '80px' },
-    labelBadge: { display: 'inline-block', padding: '8px 24px', backgroundColor: 'rgba(220, 38, 38, 0.1)', color: '#DC2626', borderRadius: '30px', fontSize: '13px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '20px', border: '1px solid rgba(220, 38, 38, 0.2)' },
-    heading: { fontSize: 'clamp(32px, 6vw, 48px)', color: '#1F1F1F', marginBottom: '15px', fontWeight: '800' },
-    headingHighlight: { color: '#DC2626' },
-    subheading: { fontSize: 'clamp(15px, 3vw, 18px)', color: '#666' },
-    documentsContainer: { maxWidth: '900px', margin: '0 auto' },
-    documentSection: { marginBottom: '80px' },
-    sectionHeader: { display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '40px', padding: 'clamp(20px, 3vw, 30px)', backgroundColor: '#FAFAFA', borderRadius: '20px', border: '2px solid rgba(220, 38, 38, 0.1)', flexWrap: 'wrap' },
-    docIconBox: { width: '70px', height: '70px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
-    docInfo: { flex: 1, minWidth: '150px' },
-    docTitle: { fontSize: 'clamp(20px, 4vw, 28px)', color: '#1F1F1F', margin: '0 0 8px 0', fontWeight: '700' },
-    docSubtitle: { fontSize: '16px', color: '#666', margin: 0 },
-    pdfContainer: { width: '100%', display: 'flex', justifyContent: 'center', overflowX: 'auto' },
-    divider: { height: '2px', backgroundColor: 'rgba(220, 38, 38, 0.1)', marginTop: '80px' },
+    container: {
+        padding: 'clamp(60px, 8vw, 100px) 5%',
+        backgroundColor: '#FFFFFF',
+        overflowX: 'hidden'
+    },
+    header: {
+        textAlign: 'center',
+        marginBottom: '80px'
+    },
+    labelBadge: {
+        display: 'inline-block',
+        padding: '8px 24px',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        color: '#DC2626',
+        borderRadius: '30px',
+        fontSize: '13px',
+        fontWeight: '700',
+        letterSpacing: '1.5px',
+        textTransform: 'uppercase',
+        marginBottom: '20px',
+        border: '1px solid rgba(220, 38, 38, 0.2)'
+    },
+    heading: {
+        fontSize: 'clamp(32px, 6vw, 48px)',
+        color: '#1F1F1F',
+        marginBottom: '15px',
+        fontWeight: '800'
+    },
+    headingHighlight: {
+        color: '#DC2626'
+    },
+    subheading: {
+        fontSize: 'clamp(15px, 3vw, 18px)',
+        color: '#666'
+    },
+    documentsContainer: {
+        maxWidth: '900px',
+        margin: '0 auto'
+    },
+    documentSection: {
+        marginBottom: '80px'
+    },
+    sectionHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '20px',
+        marginBottom: '40px',
+        padding: 'clamp(20px, 3vw, 30px)',
+        backgroundColor: '#FAFAFA',
+        borderRadius: '20px',
+        border: '2px solid rgba(220, 38, 38, 0.1)',
+        flexWrap: 'wrap'
+    },
+    docIconBox: {
+        width: '70px',
+        height: '70px',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0
+    },
+    docInfo: {
+        flex: 1,
+        minWidth: '150px'
+    },
+    docTitle: {
+        fontSize: 'clamp(20px, 4vw, 28px)',
+        color: '#1F1F1F',
+        margin: '0 0 8px 0',
+        fontWeight: '700'
+    },
+    docSubtitle: {
+        fontSize: '16px',
+        color: '#666',
+        margin: 0
+    },
+    pdfContainer: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        overflowX: 'auto'
+    },
+    divider: {
+        height: '2px',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        marginTop: '80px'
+    },
 };
 
 export default DocumentDownloads;

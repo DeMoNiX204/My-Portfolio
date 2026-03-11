@@ -150,35 +150,218 @@ function Projects() {
 }
 
 const styles = {
-    container: { padding: 'clamp(60px, 8vw, 100px) 5%', backgroundColor: '#FFFFFF', overflowX: 'hidden' },
-    header: { textAlign: 'center', marginBottom: '70px' },
-    labelBadge: { display: 'inline-block', padding: '8px 24px', backgroundColor: 'rgba(220, 38, 38, 0.1)', color: '#DC2626', borderRadius: '30px', fontSize: '13px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '20px', border: '1px solid rgba(220, 38, 38, 0.2)' },
-    heading: { fontSize: 'clamp(32px, 6vw, 48px)', color: '#1F1F1F', marginBottom: '15px', fontWeight: '800' },
-    headingHighlight: { color: '#DC2626' },
-    subheading: { fontSize: 'clamp(15px, 3vw, 18px)', color: '#666' },
-    card: { backgroundColor: '#FAFAFA', borderRadius: '24px', overflow: 'hidden', border: '2px solid rgba(220, 38, 38, 0.1)', height: '100%' },
-    imageBox: { height: '220px', background: 'linear-gradient(135deg, #DC2626 0%, #EF4444 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' },
-    Icon: { fontSize: '80px' },
-    content: { padding: 'clamp(20px, 4vw, 35px)', backgroundColor: '#FFFFFF' },
-    projectHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' },
-    projectTitle: { fontSize: 'clamp(18px, 3vw, 24px)', color: '#1F1F1F', fontWeight: '700', flex: 1, lineHeight: '1.3' },
-    projectIndex: { fontSize: '40px', fontWeight: '800', lineHeight: '1', marginLeft: '15px' },
-    projectDesc: { fontSize: 'clamp(13px, 2.5vw, 15px)', color: '#666', lineHeight: '1.7', marginBottom: '25px' },
-    techList: { display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '30px' },
-    techTag: { backgroundColor: 'rgba(220, 38, 38, 0.1)', color: '#DC2626', padding: '8px 16px', borderRadius: '8px', fontSize: '13px', fontWeight: '600' },
-    linkButton: { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', backgroundColor: '#2d2d2d', color: '#FFFFFF', textDecoration: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: '600' },
-    detailsButton: { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', background: '#DC2626', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: '600', cursor: 'pointer' },
-    modalOverlay: { position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.75)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 9999, padding: '20px', boxSizing: 'border-box' },
-    modalContent: { backgroundColor: '#FFFFFF', padding: 'clamp(25px, 5vw, 50px)', borderRadius: '24px', width: '100%', maxWidth: '700px', maxHeight: '85vh', overflowY: 'auto', position: 'relative', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', boxSizing: 'border-box' },
-    closeButton: { position: 'absolute', top: '20px', right: '20px', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(220,38,38,0.1)', border: 'none', fontSize: '20px', color: '#DC2626', cursor: 'pointer', fontWeight: 'bold' },
-    modalHeader: { display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '40px', paddingBottom: '25px', borderBottom: '2px solid rgba(220,38,38,0.1)', flexWrap: 'wrap' },
-    modalIconBox: { width: '55px', height: '55px', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #DC2626 0%, #EF4444 100%)', flexShrink: 0, overflow: 'hidden', color: '#FFFFFF' },
-    modalTitle: { fontSize: 'clamp(20px, 4vw, 28px)', color: '#1F1F1F', fontWeight: '700', margin: 0, lineHeight: '1.2', flex: 1, minWidth: 0, wordBreak: 'break-word' },
-    modalSection: { marginBottom: '30px' },
-    modalSubtitle: { fontSize: '20px', color: '#DC2626', fontWeight: '700', marginBottom: '15px' },
-    modalText: { fontSize: '16px', color: '#555', lineHeight: '1.8' },
-    modalList: { paddingLeft: '25px', margin: 0 },
-    modalListItem: { fontSize: '16px', color: '#555', lineHeight: '1.8', marginBottom: '10px' },
+    container: {
+        padding: 'clamp(60px, 8vw, 100px) 5%',
+        backgroundColor: '#FFFFFF',
+        overflowX: 'hidden'
+    },
+    header: {
+        textAlign: 'center',
+        marginBottom: '70px'
+    },
+    labelBadge: {
+        display: 'inline-block',
+        padding: '8px 24px',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        color: '#DC2626',
+        borderRadius: '30px',
+        fontSize: '13px',
+        fontWeight: '700',
+        letterSpacing: '1.5px',
+        textTransform: 'uppercase',
+        marginBottom: '20px',
+        border: '1px solid rgba(220, 38, 38, 0.2)'
+    },
+    heading: {
+        fontSize: 'clamp(32px, 6vw, 48px)',
+        color: '#1F1F1F',
+        marginBottom: '15px',
+        fontWeight: '800'
+    },
+    headingHighlight: {
+        color: '#DC2626'
+    },
+    subheading: {
+        fontSize: 'clamp(15px, 3vw, 18px)',
+        color: '#666'
+    },
+    card: {
+        backgroundColor: '#FAFAFA',
+        borderRadius: '24px',
+        overflow: 'hidden',
+        border: '2px solid rgba(220, 38, 38, 0.1)',
+        height: '100%'
+    },
+    imageBox: {
+        height: '220px',
+        background: 'linear-gradient(135deg, #DC2626 0%, #EF4444 100%)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    Icon: {
+        fontSize: '80px'
+    },
+    content: {
+        padding: 'clamp(20px, 4vw, 35px)',
+        backgroundColor: '#FFFFFF'
+    },
+    projectHeader: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        marginBottom: '15px'
+    },
+    projectTitle: {
+        fontSize: 'clamp(18px, 3vw, 24px)',
+        color: '#1F1F1F',
+        fontWeight: '700',
+        flex: 1,
+        lineHeight: '1.3'
+    },
+    projectIndex: {
+        fontSize: '40px',
+        fontWeight: '800',
+        lineHeight: '1',
+        marginLeft: '15px'
+    },
+    projectDesc: {
+        fontSize: 'clamp(13px, 2.5vw, 15px)',
+        color: '#666',
+        lineHeight: '1.7',
+        marginBottom: '25px'
+    },
+    techList: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '10px',
+        marginBottom: '30px'
+    },
+    techTag: {
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        color: '#DC2626',
+        padding: '8px 16px',
+        borderRadius: '8px',
+        fontSize: '13px',
+        fontWeight: '600'
+    },
+    linkButton: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px', padding: '14px',
+        backgroundColor: '#2d2d2d',
+        color: '#FFFFFF',
+        textDecoration: 'none',
+        borderRadius: '12px',
+        fontSize: '15px',
+        fontWeight: '600'
+    },
+    detailsButton: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        padding: '14px',
+        background: '#DC2626',
+        color: '#FFFFFF',
+        border: 'none',
+        borderRadius: '12px',
+        fontSize: '15px',
+        fontWeight: '600',
+        cursor: 'pointer'
+    },
+    modalOverlay: {
+        position: 'fixed',
+        inset: 0,
+        backgroundColor: 'rgba(0,0,0,0.75)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 9999,
+        padding: '20px',
+        boxSizing: 'border-box'
+    },
+    modalContent: {
+        backgroundColor: '#FFFFFF',
+        padding: 'clamp(25px, 5vw, 50px)',
+        borderRadius: '24px',
+        width: '100%',
+        maxWidth: '700px',
+        maxHeight: '85vh',
+        overflowY: 'auto',
+        position: 'relative',
+        boxShadow: '0 25px 50px rgba(0,0,0,0.3)',
+        boxSizing: 'border-box' },
+    closeButton: {
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        width: '40px',
+        height: '40px',
+        borderRadius: '50%',
+        backgroundColor: 'rgba(220,38,38,0.1)',
+        border: 'none',
+        fontSize: '20px',
+        color: '#DC2626',
+        cursor: 'pointer',
+        fontWeight: 'bold'
+    },
+    modalHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '20px',
+        marginBottom: '40px',
+        paddingBottom: '25px',
+        borderBottom: '2px solid rgba(220,38,38,0.1)',
+        flexWrap: 'wrap'
+    },
+    modalIconBox: {
+        width: '55px',
+        height: '55px',
+        borderRadius: '14px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(135deg, #DC2626 0%, #EF4444 100%)',
+        flexShrink: 0,
+        overflow: 'hidden',
+        color: '#FFFFFF'
+    },
+    modalTitle: {
+        fontSize: 'clamp(20px, 4vw, 28px)',
+        color: '#1F1F1F',
+        fontWeight: '700',
+        margin: 0,
+        lineHeight: '1.2',
+        flex: 1,
+        minWidth: 0,
+        wordBreak: 'break-word'
+    },
+    modalSection: {
+        marginBottom: '30px'
+    },
+    modalSubtitle: {
+        fontSize: '20px',
+        color: '#DC2626',
+        fontWeight: '700',
+        marginBottom: '15px'
+    },
+    modalText: {
+        fontSize: '16px',
+        color: '#555',
+        lineHeight: '1.8'
+    },
+    modalList: {
+        paddingLeft: '25px',
+        margin: 0
+    },
+    modalListItem: {
+        fontSize: '16px',
+        color: '#555',
+        lineHeight: '1.8',
+        marginBottom: '10px'
+    },
 };
 
 export default Projects;

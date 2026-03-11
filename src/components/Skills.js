@@ -119,23 +119,133 @@ const styles = {
                 backgroundColor: '#FAFAFA', 
                 overflowX: 'hidden'
             },
-    header: { textAlign: 'center', marginBottom: '70px' },
-    labelBadge: { display: 'inline-block', padding: '8px 24px', backgroundColor: 'rgba(220, 38, 38, 0.1)', color: '#DC2626', borderRadius: '30px', fontSize: '13px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '20px', border: '1px solid rgba(220, 38, 38, 0.2)' },
-    heading: { fontSize: 'clamp(32px, 6vw, 48px)', color: '#1F1F1F', marginBottom: '15px', fontWeight: '800' },
-    headingHighlight: { color: '#DC2626' },
-    subheading: { fontSize: 'clamp(15px, 3vw, 18px)', color: '#666' },
-    card: { backgroundColor: '#FFFFFF', padding: 'clamp(25px, 4vw, 40px)', borderRadius: '20px', border: '2px solid rgba(220, 38, 38, 0.1)', position: 'relative', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)', height: '100%', transition: 'box-shadow 0.3s ease' },
-    cardHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px' },
-    iconBox: { width: '60px', height: '60px', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(220, 38, 38, 0.1)', flexShrink: 0 },
-    cardNumber: { fontSize: '48px', fontWeight: '800', lineHeight: '1' },
-    categoryTitle: { fontSize: 'clamp(18px, 3vw, 24px)', color: '#1F1F1F', marginBottom: '25px', fontWeight: '700' },
-    skillTags: { display: 'flex', flexWrap: 'wrap', gap: '10px' },
-    tag: { backgroundColor: 'rgba(220, 38, 38, 0.08)', color: '#1F1F1F', padding: '8px 14px', borderRadius: '10px', fontSize: 'clamp(12px, 2vw, 14px)', fontWeight: '600' },
-    cardAccent: { position: 'absolute', bottom: '0', left: '0', right: '0', height: '4px', backgroundColor: '#DC2626', borderRadius: '0 0 20px 20px' },
-    additionalSkills: { padding: 'clamp(30px, 5vw, 50px)', backgroundColor: '#FFFFFF', borderRadius: '20px', border: '2px solid rgba(220, 38, 38, 0.1)', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)' },
-    additionalTitle: { fontSize: 'clamp(22px, 4vw, 28px)', color: '#1F1F1F', marginBottom: '30px', fontWeight: '700', textAlign: 'center' },
-    additionalItem: { display: 'flex', alignItems: 'center', gap: '12px', padding: '15px 20px', backgroundColor: '#FAFAFA', borderRadius: '12px', fontSize: '15px', fontWeight: '500', color: '#333' },
-    checkmark: { width: '24px', height: '24px', borderRadius: '50%', backgroundColor: '#DC2626', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 'bold', flexShrink: 0 },
+    header: {
+        textAlign: 'center',
+        marginBottom: '70px'
+    },
+    labelBadge: {
+        display: 'inline-block',
+        padding: '8px 24px',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        color: '#DC2626',
+        borderRadius: '30px', 
+        ontSize: '13px',
+        fontWeight: '700',
+        letterSpacing: '1.5px',
+        textTransform: 'uppercase',
+        marginBottom: '20px',
+        border: '1px solid rgba(220, 38, 38, 0.2)'
+    },
+    heading: {
+        fontSize: 'clamp(32px, 6vw, 48px)',
+        color: '#1F1F1F',
+        marginBottom: '15px',
+        fontWeight: '800'
+    },
+    headingHighlight: {
+        color: '#DC2626'
+    },
+    subheading: {
+        fontSize: 'clamp(15px, 3vw, 18px)',
+        color: '#666'
+    },
+    card: {
+        backgroundColor: '#FFFFFF',
+        padding: 'clamp(25px, 4vw, 40px)',
+        borderRadius: '20px',
+        border: '2px solid rgba(220, 38, 38, 0.1)',
+        position: 'relative',
+        overflow: 'hidden',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+        height: '100%',
+        transition: 'box-shadow 0.3s ease'
+    },
+    cardHeader: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: '25px'
+    },
+    iconBox: {
+        width: '60px',
+        height: '60px',
+        borderRadius: '14px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        flexShrink: 0
+    },
+    cardNumber: {
+        fontSize: '48px',
+        fontWeight: '800',
+        lineHeight: '1'
+    },
+    categoryTitle: {
+        fontSize: 'clamp(18px, 3vw, 24px)',
+        color: '#1F1F1F',
+        marginBottom: '25px',
+        fontWeight: '700'
+    },
+    skillTags: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '10px'
+    },
+    tag: {
+        backgroundColor: 'rgba(220, 38, 38, 0.08)',
+        color: '#1F1F1F',
+        padding: '8px 14px',
+        borderRadius: '10px',
+        fontSize: 'clamp(12px, 2vw, 14px)',
+        fontWeight: '600'
+    },
+    cardAccent: {
+        position: 'absolute',
+        bottom: '0',
+        left: '0', 
+        ight: '0',
+        height: '4px',
+        backgroundColor: '#DC2626',
+        borderRadius: '0 0 20px 20px'
+    },
+    additionalSkills: {
+        padding: 'clamp(30px, 5vw, 50px)',
+        backgroundColor: '#FFFFFF',
+        borderRadius: '20px',
+        border: '2px solid rgba(220, 38, 38, 0.1)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)'
+    },
+    additionalTitle: {
+        fontSize: 'clamp(22px, 4vw, 28px)',
+        color: '#1F1F1F',
+        marginBottom: '30px',
+        fontWeight: '700',
+        textAlign: 'center'
+    },
+    additionalItem: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px',
+        padding: '15px 20px',
+        backgroundColor: '#FAFAFA',
+        borderRadius: '12px',
+        fontSize: '15px',
+        fontWeight: '500',
+        color: '#333'
+    },
+    checkmark: {
+        width: '24px',
+        height: '24px',
+        borderRadius: '50%',
+        backgroundColor: '#DC2626',
+        color: '#FFFFFF',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '14px',
+        fontWeight: 'bold',
+        flexShrink: 0 },
 };
 
 export default Skills;

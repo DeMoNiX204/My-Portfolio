@@ -160,114 +160,114 @@ const styles = {
         marginBottom: '25px',
     },
     badgeDot: {
-        width: '8px', 
-        height: '8px', 
+        width: '8px',
+        height: '8px',
         backgroundColor: '#EF4444',
-        borderRadius: '50%', 
-        flexShrink: 0 
+        borderRadius: '50%',
+        flexShrink: 0
     },
     greeting: {
-        fontSize: 'clamp(20px, 5vw, 28px)', 
-        color: '#A0A0A0', 
-        marginBottom: '15px', 
-        fontWeight: '400' 
+        fontSize: 'clamp(20px, 5vw, 28px)',
+        color: '#A0A0A0',
+        marginBottom: '15px',
+        fontWeight: '400'
     },
-    name: { 
-        fontSize: 'clamp(28px, 6vw, 48px)', 
-        color: '#FFFFFF', marginBottom: '10px', 
-        fontWeight: '800', 
-        lineHeight: '1.2', 
-        wordBreak: 'break-word' 
+    name: {
+        fontSize: 'clamp(28px, 6vw, 48px)',
+        color: '#FFFFFF', marginBottom: '10px',
+        fontWeight: '800',
+        lineHeight: '1.2',
+        wordBreak: 'break-word'
     },
-    nameHighlight: { 
-        color: '#DC2626' 
+    nameHighlight: {
+        color: '#DC2626'
     },
-    role: { 
-        fontSize: 'clamp(20px, 4vw, 32px)', 
-        color: '#FFFFFF', fontWeight: '600', 
-        marginBottom: '8px', 
-        marginTop: '20px' 
+    role: {
+        fontSize: 'clamp(20px, 4vw, 32px)',
+        color: '#FFFFFF', fontWeight: '600',
+        marginBottom: '8px',
+        marginTop: '20px'
     },
-    roleUnderline: { 
-        height: '4px', 
-        background: '#DC2626', 
-        borderRadius: '2px', 
-        marginBottom: '30px' 
+    roleUnderline: {
+        height: '4px',
+        background: '#DC2626',
+        borderRadius: '2px',
+        marginBottom: '30px'
     },
     description: {
-        fontSize: 'clamp(14px, 3vw, 17px)', 
-        color: '#B0B0B0', 
-        lineHeight: '1.8', 
-        marginBottom: '40px', 
-        maxWidth: '540px', 
-        wordBreak: 'break-word' 
+        fontSize: 'clamp(14px, 3vw, 17px)',
+        color: '#B0B0B0',
+        lineHeight: '1.8',
+        marginBottom: '40px',
+        maxWidth: '540px',
+        wordBreak: 'break-word'
     },
-    primaryButton: { 
-        display: 'flex', 
-        alignItems: 'center', 
-                        gap: '10px', 
-                        padding: '16px 32px', 
-                        background: '#DC2626', 
-                        color: '#FFFFFF', 
-                        border: 'none', 
-                        borderRadius: '12px', 
-                        fontSize: '16px', 
-                        cursor: 'pointer', 
-                        fontWeight: '600', 
-                        transition: 'all 0.3s ease', 
-                        whiteSpace: 'nowrap' 
-                    },
-    secondaryButton: { 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        gap: '10px', 
-                        padding: '16px 32px', 
-                        backgroundColor: 'transparent', 
-                        color: '#DC2626', 
-                        border: '2px solid #DC2626', 
-                        borderRadius: '12px', 
-                        fontSize: '16px', 
-                        cursor: 'pointer', 
-                        fontWeight: '600', 
-                        transition: 'all 0.3s ease', 
-                        whiteSpace: 'nowrap' 
-                    },
-    statItem: { 
-                    textAlign: 'left' 
-                },
-    statNumber: { 
-                    fontSize: 'clamp(24px, 5vw, 32px)', 
-                    fontWeight: '800', 
-                    color: '#DC2626', 
-                    marginBottom: '5px' 
-                },
-    statLabel: { 
-                    fontSize: '13px', 
-                    color: '#808080', 
-                    textTransform: 'uppercase' 
-                },
-    statDivider: { 
-                    width: '1px', 
-                    height: '40px', 
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)' 
-                },
-    imageFrame: { 
-                    position: 'relative', 
-                    width: '100%', 
-                    maxWidth: '300px', 
-                    height: 'auto', 
-                    aspectRatio: '1/1', 
-                    margin: '30px auto 0 auto' 
-                },
-    profilePic: { 
-                    width: '100%', 
-                    height: '100%', 
-                    borderRadius: '50%', 
-                    objectFit: 'cover', 
-                    objectPosition: 'top', 
-                    border: '6px solid rgba(220, 38, 38, 0.3)', 
-                    boxShadow: '0 20px 60px rgba(220, 38, 38, 0.2)' 
-                },
+    primaryButton: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        padding: '16px 32px',
+        background: '#DC2626',
+        color: '#FFFFFF',
+        border: 'none',
+        borderRadius: '12px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        fontWeight: '600',
+        transition: 'all 0.3s ease',
+        whiteSpace: 'nowrap'
+    },
+    secondaryButton: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        padding: '16px 32px',
+        backgroundColor: 'transparent',
+        color: '#DC2626',
+        border: '2px solid #DC2626',
+        borderRadius: '12px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        fontWeight: '600',
+        transition: 'all 0.3s ease',
+        whiteSpace: 'nowrap'
+    },
+    statItem: {
+        textAlign: 'left'
+    },
+    statNumber: {
+        fontSize: 'clamp(24px, 5vw, 32px)',
+        fontWeight: '800',
+        color: '#DC2626',
+        marginBottom: '5px'
+    },
+    statLabel: {
+        fontSize: '13px',
+        color: '#808080',
+        textTransform: 'uppercase'
+    },
+    statDivider: {
+        width: '1px',
+        height: '40px',
+        backgroundColor: 'rgba(255, 255, 255, 0.1)'
+    },
+    imageFrame: {
+        position: 'relative',
+        width: '100%',
+        maxWidth: '300px',
+        height: 'auto',
+        aspectRatio: '1/1',
+        margin: '30px auto 0 auto'
+    },
+    profilePic: {
+        width: '100%',
+        height: '100%',
+        borderRadius: '50%',
+        objectFit: 'cover',
+        objectPosition: 'top',
+        border: '6px solid rgba(220, 38, 38, 0.3)',
+        boxShadow: '0 20px 60px rgba(220, 38, 38, 0.2)'
+    },
 };
 
 export default Hero;

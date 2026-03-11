@@ -135,225 +135,226 @@ function Contact() {
 }
 
 const styles = {
-    container: { padding: 'clamp(60px, 8vw, 100px) 5% 0 5%', 
-                backgroundColor: '#FAFAFA', 
-                overflowX: 'hidden' 
+    container: {
+        padding: 'clamp(60px, 8vw, 100px) 5% 0 5%',
+        backgroundColor: '#FAFAFA',
+        overflowX: 'hidden'
+    },
+    content: {
+        position: 'relative'
+    },
+    header: {
+        textAlign: 'center',
+        marginBottom: '60px'
             },
-    content: { 
-                position: 'relative' 
-            },
-    header: { 
-                textAlign: 'center', 
-                marginBottom: '60px' 
-            },
-    labelBadge: { 
-                display: 'inline-block', 
-                padding: '8px 24px', 
-                backgroundColor: 'rgba(220, 38, 38, 0.1)', 
-                color: '#DC2626', 
-                borderRadius: '30px', 
-                fontSize: '13px', 
-                fontWeight: '700', 
-                letterSpacing: '1.5px', 
-                textTransform: 'uppercase', 
-                marginBottom: '20px', 
-                border: '1px solid rgba(220, 38, 38, 0.2)' 
-            },
+    labelBadge: {
+        display: 'inline-block',
+        padding: '8px 24px',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        color: '#DC2626',
+        borderRadius: '30px',
+        fontSize: '13px',
+        fontWeight: '700',
+        letterSpacing: '1.5px',
+        textTransform: 'uppercase',
+        marginBottom: '20px',
+        border: '1px solid rgba(220, 38, 38, 0.2)'
+    },
     heading: {
-                fontSize: 'clamp(32px, 6vw, 48px)',
-                color: '#1F1F1F',
-                marginBottom: '15px',
-                fontWeight: '800'
-            },
+        fontSize: 'clamp(32px, 6vw, 48px)',
+        color: '#1F1F1F',
+        marginBottom: '15px',
+        fontWeight: '800'
+    },
     headingHighlight: {
-                        color: '#DC2626'
-                    },
+        color: '#DC2626'
+    },
     subHeading: {
-                    fontSize: 'clamp(15px, 3vw, 18px)',
-                    color: '#666'
-                },
+        fontSize: 'clamp(15px, 3vw, 18px)',
+        color: '#666'
+    },
     contactList: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '20px', maxWidth: '700px',
-                    margin: '0 auto 80px auto'
-                },
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px', maxWidth: '700px',
+        margin: '0 auto 80px auto'
+    },
     contactCard: {
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '20px', padding: '20px',
-                    backgroundColor: '#FFFFFF',
-                    border: '2px solid rgba(220, 38, 38, 0.1)',
-                    borderRadius: '16px',
-                    textDecoration: 'none',
-                    color: 'inherit',
-                    boxShadow: '0 8px 20px rgba(0,0,0,0.06)',
-                    minWidth: 0
-                },
+        display: 'flex',
+        alignItems: 'center',
+        gap: '20px', padding: '20px',
+        backgroundColor: '#FFFFFF',
+        border: '2px solid rgba(220, 38, 38, 0.1)',
+        borderRadius: '16px',
+        textDecoration: 'none',
+        color: 'inherit',
+        boxShadow: '0 8px 20px rgba(0,0,0,0.06)',
+        minWidth: 0
+    },
     iconBox: {
-                width: '60px',
-                height: '60px',
-                borderRadius: '14px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'rgba(220, 38, 38, 0.1)',
-                flexShrink: 0
-            },
+        width: '60px',
+        height: '60px',
+        borderRadius: '14px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+        flexShrink: 0
+    },
     info: {
-            flex: 1,
-            textAlign: 'left',
-            minWidth: 0,
-            overflow: 'hidden'
-        },
+        flex: 1,
+        textAlign: 'left',
+        minWidth: 0,
+        overflow: 'hidden'
+    },
     platform: {
-                fontSize: 'clamp(16px, 4vw, 20px)',
-                color: '#1F1F1F',
-                margin: '0 0 6px 0',
-                fontWeight: '700'
-            },
+        fontSize: 'clamp(16px, 4vw, 20px)',
+        color: '#1F1F1F',
+        margin: '0 0 6px 0',
+        fontWeight: '700'
+    },
     value: {
-            fontSize: 'clamp(12px, 3vw, 15px)',
-            color: '#DC2626',
-            margin: '0',
-            fontWeight: '500',
-            wordBreak: 'break-all'
-        },
+        fontSize: 'clamp(12px, 3vw, 15px)',
+        color: '#DC2626',
+        margin: '0',
+        fontWeight: '500',
+        wordBreak: 'break-all'
+    },
     arrow: {
-            fontSize: '24px',
-            color: '#DC2626',
-            fontWeight: 'bold',
-            flexShrink: 0
-        },
+        fontSize: '24px',
+        color: '#DC2626',
+        fontWeight: 'bold',
+        flexShrink: 0
+    },
     ctaBox: {
-            maxWidth: '700px',
-            margin: '0 auto 80px auto',
-            padding: 'clamp(30px, 5vw, 60px)',
-            background: 'linear-gradient(135deg, #1F1F1F 0%, #2d2d2d 100%)',
-            borderRadius: '24px',
-            textAlign: 'center',
-            boxShadow: '0 20px 60px rgba(0,0,0,0.15)'
-        },
+        maxWidth: '700px',
+        margin: '0 auto 80px auto',
+        padding: 'clamp(30px, 5vw, 60px)',
+        background: 'linear-gradient(135deg, #1F1F1F 0%, #2d2d2d 100%)',
+        borderRadius: '24px',
+        textAlign: 'center',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.15)'
+    },
     ctaTitle: {
-                fontSize: 'clamp(22px, 5vw, 32px)',
-                color: '#FFFFFF',
-                marginBottom: '15px',
-                fontWeight: '700'
-            },
+        fontSize: 'clamp(22px, 5vw, 32px)',
+        color: '#FFFFFF',
+        marginBottom: '15px',
+        fontWeight: '700'
+    },
     ctaText: {
-            fontSize: 'clamp(14px, 3vw, 17px)',
-            color: '#B0B0B0',
-            lineHeight: '1.7',
-            marginBottom: '35px'
-        },
+        fontSize: 'clamp(14px, 3vw, 17px)',
+        color: '#B0B0B0',
+        lineHeight: '1.7',
+        marginBottom: '35px'
+    },
     form: {
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '14px',
-            textAlign: 'left'
-        },
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '14px',
+        textAlign: 'left'
+    },
     formRow: {
-                display: 'flex',
-                gap: '14px',
-                flexWrap: 'wrap'
-            },
+        display: 'flex',
+        gap: '14px',
+        flexWrap: 'wrap'
+    },
     input: {
-            flex: 1,
-            minWidth: '140px',
-            padding: '14px 18px',
-            borderRadius: '10px',
-            border: '2px solid rgba(255,255,255,0.1)',
-            backgroundColor: 'rgba(255,255,255,0.08)',
-            color: '#FFFFFF',
-            fontSize: '15px',
-            outline: 'none',
-            boxSizing: 'border-box',
-            fontFamily: 'inherit'
-        },
+        flex: 1,
+        minWidth: '140px',
+        padding: '14px 18px',
+        borderRadius: '10px',
+        border: '2px solid rgba(255,255,255,0.1)',
+        backgroundColor: 'rgba(255,255,255,0.08)',
+        color: '#FFFFFF',
+        fontSize: '15px',
+        outline: 'none',
+        boxSizing: 'border-box',
+        fontFamily: 'inherit'
+    },
     textarea: {
-                width: '100%',
-                padding: '14px 18px',
-                borderRadius: '10px',
-                border: '2px solid rgba(255,255,255,0.1)',
-                backgroundColor: 'rgba(255,255,255,0.08)',
-                color: '#FFFFFF', fontSize: '15px',
-                outline: 'none',
-                resize: 'vertical',
-                boxSizing: 'border-box',
-                fontFamily: 'inherit'
-            },
+        width: '100%',
+        padding: '14px 18px',
+        borderRadius: '10px',
+        border: '2px solid rgba(255,255,255,0.1)',
+        backgroundColor: 'rgba(255,255,255,0.08)',
+        color: '#FFFFFF', fontSize: '15px',
+        outline: 'none',
+        resize: 'vertical',
+        boxSizing: 'border-box',
+        fontFamily: 'inherit'
+    },
     submitButton: {
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    padding: '16px',
-                    background: '#DC2626',
-                    color: '#FFFFFF', 
-                    border: 'none',
-                    borderRadius: '12px',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    cursor: 'pointer',
-                    width: '100%'
-                },
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+        padding: '16px',
+        background: '#DC2626',
+        color: '#FFFFFF', 
+        border: 'none',
+        borderRadius: '12px',
+        fontSize: '16px',
+        fontWeight: '600',
+        cursor: 'pointer',
+        width: '100%'
+    },
     successMsg: {
-                    padding: '12px 16px',
-                    backgroundColor: 'rgba(34,197,94,0.15)',
-                    border: '1px solid rgba(34,197,94,0.4)',
-                    borderRadius: '10px', color: '#4ade80',
-                    fontSize: '14px',
-                    textAlign: 'center'
-                },
+        padding: '12px 16px',
+        backgroundColor: 'rgba(34,197,94,0.15)',
+        border: '1px solid rgba(34,197,94,0.4)',
+        borderRadius: '10px', color: '#4ade80',
+        fontSize: '14px',
+        textAlign: 'center'
+    },
     errorMsg: {
-                padding: '12px 16px',
-                backgroundColor: 'rgba(220,38,38,0.15)',
-                border: '1px solid rgba(220,38,38,0.4)',
-                borderRadius: '10px', color: '#f87171',
-                fontSize: '14px',
-                textAlign: 'center'
-            },
+        padding: '12px 16px',
+        backgroundColor: 'rgba(220,38,38,0.15)',
+        border: '1px solid rgba(220,38,38,0.4)',
+        borderRadius: '10px', color: '#f87171',
+        fontSize: '14px',
+        textAlign: 'center'
+    },
     footer: {
-                borderTop: '2px solid rgba(220,38,38,0.1)',
-                paddingTop: '50px',
-                paddingBottom: '50px',
-                marginTop: '80px'
-            },
+        borderTop: '2px solid rgba(220,38,38,0.1)',
+        paddingTop: '50px',
+        paddingBottom: '50px',
+        marginTop: '80px'
+    },
     footerContent: {
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                    gap: '20px',
-                    maxWidth: '1200px',
-                    margin: '0 auto'
-                },
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '20px',
+        maxWidth: '1200px',
+        margin: '0 auto'
+    },
     footerLeft: {
-                flex: 1,
-                minWidth:
-                '150px'
-            },
+        flex: 1,
+        minWidth:
+        '150px'
+    },
     footerLogo: {
-                fontSize: 'clamp(20px, 4vw, 28px)',
-                fontWeight: '800',
-                color: '#DC2626',
-                marginBottom: '8px'
-            },
+        fontSize: 'clamp(20px, 4vw, 28px)',
+        fontWeight: '800',
+        color: '#DC2626',
+        marginBottom: '8px'
+    },
     footerTagline: {
-                        fontSize: '14px',
-                        color: '#666',
-                        margin: 0
-                    },
+        fontSize: '14px',
+        color: '#666',
+        margin: 0
+    },
     footerRight: {
-                    flex: 1,
-                    textAlign: 'right',
-                    minWidth: '150px'
-                },
+        flex: 1,
+        textAlign: 'right',
+        minWidth: '150px'
+    },
     footerText: {
-                    color: '#888',
-                    fontSize: '14px',
-                    margin: 0
-                },
+        color: '#888',
+        fontSize: '14px',
+        margin: 0
+    },
 };
 
 export default Contact;
