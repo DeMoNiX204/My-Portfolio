@@ -30,10 +30,10 @@ function Contact() {
         e.preventDefault();
         setStatus('sending');
         emailjs.sendForm(
-            'YOUR_SERVICE_ID',
-            'YOUR_TEMPLATE_ID',
+            'service_qgiql3r',
+            'template_e63x6jb',
             formRef.current,
-            'YOUR_PUBLIC_KEY'
+            'nlYbvUOP7_Wj7jbtG'
         ).then(() => {
             setStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
